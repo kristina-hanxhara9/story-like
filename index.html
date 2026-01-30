@@ -1061,6 +1061,158 @@
             transform: translateY(-2px);
         }
 
+        /* Venue Section with Map */
+        .venue-section {
+            padding: 8rem 3rem;
+            background: var(--cream-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .venue-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .venue-info {
+            padding-right: 2rem;
+        }
+
+        .venue-subtitle {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--brown-light);
+            margin-bottom: 1rem;
+        }
+
+        .venue-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            color: var(--brown);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .venue-details {
+            margin-bottom: 2rem;
+        }
+
+        .venue-details p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--brown);
+            margin-bottom: 1rem;
+        }
+
+        .venue-address {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--cream);
+            border-left: 3px solid var(--pink-deep);
+            margin-bottom: 2rem;
+        }
+
+        .venue-address-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--pink-deep);
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .venue-address-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--brown);
+        }
+
+        .venue-address-text strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .venue-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: var(--brown);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .venue-btn:hover {
+            background: var(--pink-deep);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(214, 56, 100, 0.3);
+        }
+
+        .venue-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .venue-visual {
+            position: relative;
+        }
+
+        .venue-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--pink-soft) 0%, var(--brown-light) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style: italic;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .venue-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .venue-map {
+            width: 100%;
+            height: 300px;
+            border: none;
+            filter: grayscale(20%) contrast(1.1);
+            transition: filter 0.3s ease;
+        }
+
+        .venue-map:hover {
+            filter: grayscale(0%) contrast(1);
+        }
+
+        .venue-decoration {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid var(--pink-soft);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
         /* Footer - Boyd Style */
         footer {
             padding: 6rem 3rem;
@@ -1092,7 +1244,7 @@
             color: var(--brown);
         }
 
-        /* Responsive */
+        /* Responsive - Tablet */
         @media (max-width: 1024px) {
             .hero-label-left, .hero-label-right, .curved-arrow {
                 display: none;
@@ -1107,14 +1259,60 @@
             .about-container {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 3rem;
+            }
+
+            .about-left {
+                order: 1;
+            }
+
+            .about-center {
+                order: 2;
             }
 
             .about-right {
+                order: 3;
                 max-width: 100%;
             }
 
             .event-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .venue-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .venue-info {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .venue-address {
+                justify-content: center;
+            }
+
+            .venue-btn {
+                display: inline-flex;
+                justify-content: center;
+            }
+
+            .large-text-section {
+                padding: 6rem 2rem;
+            }
+
+            .decorative-curve {
+                width: 300px;
+                height: 400px;
+                left: 10%;
+            }
+
+            .decorative-curve-2 {
+                width: 200px;
+                height: 300px;
+                right: 5%;
             }
         }
 
@@ -1220,6 +1418,7 @@
             }
         }
 
+        /* Responsive - Mobile */
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 1.5rem;
@@ -1234,9 +1433,29 @@
                 transform: none;
             }
 
+            .hero {
+                min-height: 100svh;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 12vw, 5rem);
+                -webkit-text-stroke: 1px var(--white);
+            }
+
+            .hero-title-filled {
+                font-size: clamp(2.5rem, 12vw, 5rem);
+            }
+
+            .hero-ampersand {
+                font-size: clamp(3rem, 14vw, 6rem);
+                margin: -1rem 0;
+            }
+
             .hero-cta {
                 right: 1.5rem;
                 bottom: 2rem;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.65rem;
             }
 
             .form-row {
@@ -1244,17 +1463,171 @@
             }
 
             .floating-image {
-                width: 150px;
-                height: 200px;
-                margin-left: -75px;
+                width: 120px;
+                height: 160px;
+                margin-left: -60px;
+                bottom: 10%;
             }
 
             .large-text-section {
-                padding: 6rem 2rem;
+                padding: 4rem 1.5rem;
+            }
+
+            .large-text {
+                font-size: clamp(3rem, 12vw, 6rem);
             }
 
             .about, .event-section, .rsvp-section {
-                padding: 6rem 2rem;
+                padding: 4rem 1.5rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .about-founder {
+                justify-content: center;
+            }
+
+            .event-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .event-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .gallery-section {
+                padding: 2rem 0;
+            }
+
+            .gallery-item {
+                width: 250px;
+                height: 320px;
+            }
+
+            .venue-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .venue-image {
+                height: 250px;
+            }
+
+            .venue-map {
+                height: 200px;
+            }
+
+            .venue-address {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .rsvp-title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+            }
+
+            .rsvp-subtitle {
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: 4rem 1.5rem;
+            }
+
+            .footer-names {
+                font-size: clamp(2.5rem, 8vw, 4rem);
+            }
+
+            .footer-message {
+                font-size: 1.2rem;
+            }
+
+            .preloader-logo {
+                font-size: 1.3rem;
+                letter-spacing: 0.2em;
+            }
+
+            .preloader-tagline {
+                font-size: 2rem;
+            }
+
+            .scroll-progress {
+                height: 2px;
+            }
+
+            .decorative-curve,
+            .decorative-curve-2 {
+                display: none;
+            }
+        }
+
+        /* Extra small mobile */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: clamp(2rem, 10vw, 3.5rem);
+            }
+
+            .hero-title-filled {
+                font-size: clamp(2rem, 10vw, 3.5rem);
+            }
+
+            .hero-ampersand {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+            }
+
+            .floating-image {
+                width: 100px;
+                height: 130px;
+                margin-left: -50px;
+            }
+
+            .large-text {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
+
+            .event-title {
+                font-size: clamp(1.8rem, 5vw, 2.5rem);
+            }
+
+            .gallery-item {
+                width: 200px;
+                height: 260px;
+            }
+
+            .submit-btn {
+                width: 100%;
+                padding: 0.9rem 1.5rem;
+            }
+        }
+
+        /* Landscape mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                min-height: 100vh;
+                padding: 2rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 8vw, 4rem);
+            }
+
+            .hero-title-filled {
+                font-size: clamp(2rem, 8vw, 4rem);
+            }
+
+            .floating-image {
+                display: none;
+            }
+
+            .preloader {
+                padding: 2rem;
+            }
+
+            .preloader-tagline {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -1281,6 +1654,7 @@
         <a href="#" class="nav-logo">K & A</a>
         <div class="nav-right">
             <a href="#galeria">Galeria</a>
+            <a href="#vendi">Vendi</a>
             <a href="#rsvp">RSVP</a>
         </div>
     </nav>
@@ -1426,6 +1800,53 @@
             <div class="gallery-item">Foto 8</div>
             <div class="gallery-item">Foto 9</div>
             <div class="gallery-item">Foto 10</div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="venue-section" id="vendi">
+        <div class="venue-decoration"></div>
+        <div class="venue-container">
+            <div class="venue-info reveal-left">
+                <p class="venue-subtitle">Vendi i Ceremonisë</p>
+                <h2 class="venue-title">Grand Hotel Tirana</h2>
+                <div class="venue-details">
+                    <p>
+                        Një ambient elegant dhe romantik që do të bëhet dëshmitar
+                        i dashurisë sonë të përjetshme. Bashkohuni me ne në këtë
+                        vend magjik.
+                    </p>
+                </div>
+                <div class="venue-address">
+                    <svg class="venue-address-icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <div class="venue-address-text">
+                        <strong>Grand Hotel Tirana</strong>
+                        Rruga Ismail Qemali, Nr. 11<br>
+                        Tiranë, Shqipëri 1001
+                    </div>
+                </div>
+                <a href="https://maps.google.com/?q=Grand+Hotel+Tirana" target="_blank" rel="noopener noreferrer" class="venue-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Hap në Google Maps
+                </a>
+            </div>
+            <div class="venue-visual reveal-right">
+                <div class="venue-image">
+                    <!-- Replace with actual venue image: <img src="assets/images/venue.jpg" alt="Grand Hotel Tirana"> -->
+                    Foto e Vendit
+                </div>
+                <iframe
+                    class="venue-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.0565845844!2d19.818!3d41.328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE5JzQwLjgiTiAxOcKwNDknMDQuOCJF!5e0!3m2!1sen!2s!4v1234567890"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
     </section>
 
