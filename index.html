@@ -196,11 +196,14 @@
 
         .hero-video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
             z-index: 0;
+            border-radius: 20px;
+            overflow: hidden;
         }
 
         .hero-video video {
@@ -219,9 +222,9 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom,
-                rgba(253, 242, 244, 0.35) 0%,
-                rgba(253, 242, 244, 0.15) 50%,
-                rgba(253, 242, 244, 0.4) 100%);
+                rgba(253, 242, 244, 0.3) 0%,
+                rgba(253, 242, 244, 0.1) 50%,
+                rgba(253, 242, 244, 0.35) 100%);
             z-index: 1;
         }
 
