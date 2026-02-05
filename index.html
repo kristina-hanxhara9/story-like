@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kristina & Andi | Dasma Jonë</title>
+    <title>Elena & Andi | Dasma Jon&euml;</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -186,18 +186,21 @@
             align-items: center;
         }
 
-        /* Cloud Background with Parallax */
+        /* Video Background with Parallax */
         .hero-bg {
             position: absolute;
             top: -10%;
             left: -5%;
             width: 110%;
             height: 120%;
-            background:
-                url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1920&q=80') center/cover no-repeat;
-            filter: saturate(1.2) brightness(1.05);
             will-change: transform;
             transition: transform 0.1s ease-out;
+        }
+
+        .hero-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero-bg::after {
@@ -208,9 +211,10 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom,
-                rgba(253, 242, 244, 0.4) 0%,
-                rgba(214, 56, 100, 0.1) 50%,
-                rgba(253, 242, 244, 0.5) 100%);
+                rgba(253, 242, 244, 0.3) 0%,
+                rgba(214, 56, 100, 0.15) 50%,
+                rgba(253, 242, 244, 0.4) 100%);
+            z-index: 1;
         }
 
         /* Large Outlined Typography with Animation - Boyd Style */
@@ -1638,7 +1642,7 @@
 
     <!-- Preloader - Boyd Style -->
     <div class="preloader" id="preloader">
-        <div class="preloader-logo">KRISTINA & ANDI</div>
+        <div class="preloader-logo">ELENA & ANDI</div>
         <div class="preloader-tagline">Po Martohemi</div>
         <button class="preloader-enter" id="enterBtn">Kliko për të Hyrë</button>
         <div class="preloader-progress">100%</div>
@@ -1651,7 +1655,7 @@
             <a href="#historia">Historia</a>
             <a href="#detajet">Detajet</a>
         </div>
-        <a href="#" class="nav-logo">K & A</a>
+        <a href="#" class="nav-logo">E & A</a>
         <div class="nav-right">
             <a href="#galeria">Galeria</a>
             <a href="#vendi">Vendi</a>
@@ -1661,10 +1665,14 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-bg" id="heroBg">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/animated.mp4" type="video/mp4">
+            </video>
+        </div>
 
         <div class="hero-text">
-            <h1 class="hero-title">KRISTINA</h1>
+            <h1 class="hero-title">ELENA</h1>
             <span class="hero-ampersand">&</span>
             <h1 class="hero-title-filled">ANDI</h1>
         </div>
@@ -1682,7 +1690,7 @@
         </div>
 
         <div class="floating-image" id="floatingImage">
-            Foto e Çiftit
+            <img src="assets/images/sunset-couple.jpg" alt="Elena & Andi">
         </div>
 
         <a href="#rsvp" class="hero-cta">RSVP Tani</a>
@@ -1705,16 +1713,18 @@
     <section class="about" id="historia">
         <div class="about-container">
             <div class="about-left reveal-left">
-                <div class="about-logo">K & A</div>
+                <div class="about-logo">E & A</div>
                 <div class="about-year">"20 — "25</div>
             </div>
 
             <div class="about-center">
-                <div class="about-image" id="aboutImage">Foto e Çiftit</div>
+                <div class="about-image" id="aboutImage">
+                    <img src="assets/images/marry-proposal.jpg" alt="Elena & Andi" style="width:100%;height:100%;object-fit:cover;">
+                </div>
                 <div class="about-founder reveal">
                     <div class="about-founder-img"></div>
                     <div class="about-founder-info">
-                        <h4>Kristina & Andi</h4>
+                        <h4>Elena & Andi</h4>
                         <span>Të Fejuarit</span>
                     </div>
                 </div>
@@ -1778,28 +1788,28 @@
     <!-- Gallery Section -->
     <section class="gallery-section" id="galeria">
         <div class="gallery-row">
-            <div class="gallery-item">Foto 1</div>
-            <div class="gallery-item">Foto 2</div>
-            <div class="gallery-item">Foto 3</div>
-            <div class="gallery-item">Foto 4</div>
-            <div class="gallery-item">Foto 5</div>
-            <div class="gallery-item">Foto 1</div>
-            <div class="gallery-item">Foto 2</div>
-            <div class="gallery-item">Foto 3</div>
-            <div class="gallery-item">Foto 4</div>
-            <div class="gallery-item">Foto 5</div>
+            <div class="gallery-item"><img src="assets/images/sunset-couple.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/red-proposal.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/snow-fight.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/canada-travel.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/sea-lying.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/sunset-couple.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/red-proposal.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/snow-fight.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/canada-travel.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/sea-lying.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         </div>
         <div class="gallery-row">
-            <div class="gallery-item">Foto 6</div>
-            <div class="gallery-item">Foto 7</div>
-            <div class="gallery-item">Foto 8</div>
-            <div class="gallery-item">Foto 9</div>
-            <div class="gallery-item">Foto 10</div>
-            <div class="gallery-item">Foto 6</div>
-            <div class="gallery-item">Foto 7</div>
-            <div class="gallery-item">Foto 8</div>
-            <div class="gallery-item">Foto 9</div>
-            <div class="gallery-item">Foto 10</div>
+            <div class="gallery-item"><img src="assets/images/snow-with-dog.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/legs-hugging.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/marry-proposal.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/sunset-couple.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/red-proposal.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/snow-with-dog.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/legs-hugging.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/marry-proposal.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/sunset-couple.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+            <div class="gallery-item"><img src="assets/images/red-proposal.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
         </div>
     </section>
 
@@ -1836,8 +1846,7 @@
             </div>
             <div class="venue-visual reveal-right">
                 <div class="venue-image">
-                    <!-- Replace with actual venue image: <img src="assets/images/venue.jpg" alt="Grand Hotel Tirana"> -->
-                    Foto e Vendit
+                    <img src="assets/images/create-a-pink-wedding-venue-but-not-all-pink-pink-.jpeg" alt="Grand Hotel Tirana">
                 </div>
                 <iframe
                     class="venue-map"
@@ -1896,7 +1905,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-names reveal">K & A</div>
+        <div class="footer-names reveal">E & A</div>
         <div class="footer-date reveal">15 Qershor 2025 • Tiranë, Shqipëri</div>
         <p class="footer-message reveal">Me dashuri dhe padurim ju presim!</p>
     </footer>
