@@ -210,23 +210,23 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to bottom,
-                rgba(253, 242, 244, 0.35) 0%,
-                rgba(214, 56, 100, 0.1) 50%,
-                rgba(253, 242, 244, 0.45) 100%);
+                rgba(253, 242, 244, 0.55) 0%,
+                rgba(253, 242, 244, 0.4) 50%,
+                rgba(253, 242, 244, 0.6) 100%);
             z-index: 1;
         }
 
-        /* Centered Hero Video */
+        /* Centered Hero Video - Large & Prominent */
         .hero-video {
             position: relative;
             z-index: 2;
-            width: clamp(300px, 50vw, 700px);
-            max-height: 70vh;
-            border-radius: 12px;
+            width: clamp(500px, 85vw, 1200px);
+            max-height: 75vh;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 30px 80px rgba(139, 41, 66, 0.4);
+            box-shadow: 0 40px 100px rgba(139, 41, 66, 0.5);
             opacity: 0;
-            transform: scale(0.9) translateY(30px);
+            transform: scale(0.95) translateY(20px);
             animation: videoIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
         }
 
@@ -234,7 +234,8 @@
             width: 100%;
             height: 100%;
             display: block;
-            object-fit: cover;
+            object-fit: contain;
+            background: #000;
         }
 
         @keyframes videoIn {
@@ -1396,7 +1397,7 @@
             }
 
             .hero-video {
-                width: clamp(250px, 80vw, 400px);
+                width: clamp(300px, 92vw, 600px);
             }
 
             .large-text-section {
@@ -1503,7 +1504,7 @@
             }
 
             .hero-video {
-                width: clamp(200px, 85vw, 350px);
+                width: clamp(280px, 95vw, 450px);
             }
 
             .large-text {
@@ -1541,8 +1542,8 @@
             }
 
             .hero-video {
-                width: clamp(200px, 40vw, 350px);
-                max-height: 60vh;
+                width: clamp(400px, 70vw, 600px);
+                max-height: 55vh;
             }
 
             .preloader {
