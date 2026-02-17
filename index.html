@@ -1604,10 +1604,6 @@
             height: 100%;
             background: #0a0a0a;
             z-index: 10000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             transition: opacity 1s ease, visibility 1s ease;
         }
 
@@ -1616,73 +1612,6 @@
             visibility: hidden;
         }
 
-        .video-intro-content {
-            text-align: center;
-            color: var(--cream);
-        }
-
-        .video-intro-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 6vw, 4rem);
-            font-weight: 400;
-            letter-spacing: 0.3em;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards 0.3s;
-        }
-
-        .video-intro-subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            font-style: italic;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards 0.6s;
-        }
-
-        .video-intro-play {
-            width: 100px;
-            height: 100px;
-            border: 2px solid var(--cream);
-            border-radius: 50%;
-            background: transparent;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.4s ease;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards 0.9s;
-            margin: 0 auto;
-        }
-
-        .video-intro-play:hover {
-            background: var(--cream);
-            transform: scale(1.1);
-        }
-
-        .video-intro-play svg {
-            width: 30px;
-            height: 30px;
-            fill: var(--cream);
-            margin-left: 5px;
-            transition: fill 0.4s ease;
-        }
-
-        .video-intro-play:hover svg {
-            fill: #0a0a0a;
-        }
-
-        .video-intro-hint {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.9rem;
-            letter-spacing: 0.2em;
-            margin-top: 1.5rem;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards 1.2s;
-        }
-
-        /* Full screen video player */
         .video-intro-player {
             position: absolute;
             top: 0;
@@ -1691,15 +1620,6 @@
             height: 100%;
             object-fit: contain;
             background: #0a0a0a;
-            display: none;
-        }
-
-        .video-intro-player.playing {
-            display: block;
-        }
-
-        .video-intro-content.hidden {
-            display: none;
         }
 
         .video-intro-skip {
@@ -1715,13 +1635,9 @@
             letter-spacing: 0.15em;
             cursor: pointer;
             transition: all 0.3s ease;
+            z-index: 10;
             opacity: 0;
-            display: none;
-        }
-
-        .video-intro-skip.visible {
-            display: block;
-            animation: fadeIn 0.5s ease forwards;
+            animation: fadeIn 1s ease forwards 1s;
         }
 
         .video-intro-skip:hover {
@@ -1730,16 +1646,6 @@
         }
 
         @media (max-width: 768px) {
-            .video-intro-play {
-                width: 80px;
-                height: 80px;
-            }
-
-            .video-intro-play svg {
-                width: 24px;
-                height: 24px;
-            }
-
             .video-intro-skip {
                 bottom: 1.5rem;
                 right: 1.5rem;
@@ -1752,18 +1658,10 @@
 <body>
     <!-- Video Intro Screen -->
     <div class="video-intro" id="videoIntro">
-        <div class="video-intro-content" id="videoIntroContent">
-            <h1 class="video-intro-title">ELENA & ANDI</h1>
-            <p class="video-intro-subtitle">Po Martohemi</p>
-            <button class="video-intro-play" id="videoPlayBtn">
-                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </button>
-            <p class="video-intro-hint">Kliko për të parë videon</p>
-        </div>
-        <video class="video-intro-player" id="introVideo" playsinline>
-            <source src="assets/videos/animated.mp4" type="video/mp4">
+        <video class="video-intro-player" id="introVideo" autoplay muted playsinline>
+            <source src="assets/videos/mint.mp4" type="video/mp4">
         </video>
-        <button class="video-intro-skip" id="skipVideoBtn">Kalo Videon →</button>
+        <button class="video-intro-skip" id="skipVideoBtn">Kalo →</button>
     </div>
 
     <!-- Scroll Progress Bar -->
@@ -2044,11 +1942,9 @@
     </a>
 
     <script>
-        // Video Intro
+        // Video Intro - auto plays, no sound
         const videoIntro = document.getElementById('videoIntro');
-        const videoIntroContent = document.getElementById('videoIntroContent');
         const introVideo = document.getElementById('introVideo');
-        const videoPlayBtn = document.getElementById('videoPlayBtn');
         const skipVideoBtn = document.getElementById('skipVideoBtn');
         const preloader = document.getElementById('preloader');
 
@@ -2057,14 +1953,10 @@
             preloader.classList.remove('hidden');
         }
 
-        videoPlayBtn.addEventListener('click', () => {
-            videoIntroContent.classList.add('hidden');
-            introVideo.classList.add('playing');
-            skipVideoBtn.classList.add('visible');
-            introVideo.play().catch(() => {
-                // If video fails to play, go straight to website
-                endVideoIntro();
-            });
+        // Auto-play video on page load
+        introVideo.play().catch(() => {
+            // If autoplay fails, go straight to preloader
+            endVideoIntro();
         });
 
         introVideo.addEventListener('ended', () => {
